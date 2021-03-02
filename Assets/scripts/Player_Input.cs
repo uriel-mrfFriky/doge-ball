@@ -42,6 +42,12 @@ public class Player_Input : MonoBehaviour
 
         float yMovement = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         transform.position += new Vector3(0, yMovement, 0);
+
+        if(xMovement==0)
+        { GetComponent<Rigidbody2D>().velocity = new Vector2 (0,yMovement); }
+        if (yMovement == 0)
+        { GetComponent<Rigidbody2D>().velocity = new Vector2(xMovement, 0); }
+
     }
     void Actions()
     {
