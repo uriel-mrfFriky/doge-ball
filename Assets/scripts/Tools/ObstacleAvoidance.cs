@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleAvoidance : ISteeringBehaviors
+public class ObstacleAvoidance : ISteeringBehaviors2D
 {
     Transform _npc;
     Transform _target;
     float _radius;
     LayerMask _mask;
     float _avoidWeight;
+    public Collider[] obstacles;
     public ObstacleAvoidance(Transform npc, Transform target, float radius, float avoidWeight, LayerMask mask)
     {
         _mask = mask;
@@ -18,12 +19,13 @@ public class ObstacleAvoidance : ISteeringBehaviors
         _avoidWeight = avoidWeight;
     }
 
-    public Vector3 GetDir()
+    public Vector2 GetDir()
     {
         //Obtenemos los obstaculos
-        Collider[] obstacles = Physics.OverlapSphere(_npc.position, _radius, _mask);
+        obstacles = Physics.OverlapSphere(_npc.position, _radius, _mask);
         Transform obsSave = null;
         var count = obstacles.Length;
+        Vector3 dirObsToNpc = new Vector3(0,0,0);
 
         //Recorremos los obstaculos y determinos cual es el mas cercano
         for (int i = 0; i < count; i++)
@@ -38,15 +40,13 @@ public class ObstacleAvoidance : ISteeringBehaviors
                 obsSave = currObs;
             }
         }
-        Vector3 dirToTarget = (_target.position - _npc.position).normalized;
 
         //Si hay un obstaculo, le agregamos a nuestra direccion una direccion de esquive
         if (obsSave != null)
         {
-            Vector3 dirObsToNpc = (_npc.position - obsSave.position).normalized * _avoidWeight;
-            dirToTarget += dirObsToNpc;
+            dirObsToNpc = (_npc.position - obsSave.position).normalized * _avoidWeight;
         }
         //retornamos la direccion final
-        return dirToTarget.normalized;
+        return dirObsToNpc.normalized;
     }
 }

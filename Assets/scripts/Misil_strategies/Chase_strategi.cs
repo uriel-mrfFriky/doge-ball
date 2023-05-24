@@ -11,10 +11,10 @@ public class Chase_strategi : MonoBehaviour, IMove_Strategi
 
     /*  public Chase_strategi()
 { }*/
-    public void MoveStrategi(Transform target,Transform _myTransform,Rigidbody2D _Rb, float _speed,float rotationSpeed)
+    public void MoveStrategi(Transform target,Transform _myTransform,Rigidbody2D _Rb, float _speed,float rotationSpeed,ObstacleAvoidance avoidance)
     {
         Vector2 direction = (Vector2)target.position - _Rb.position;
-        float rotateAmound = Vector3.Cross(direction.normalized, _myTransform.up).z;
+        float rotateAmound = Vector3.Cross(direction.normalized + avoidance.GetDir().normalized, _myTransform.up).z;
         _newAngle = -rotateAmound * rotationSpeed * _speed/3;
         _newVelocity = _myTransform.up * _speed ;
     }

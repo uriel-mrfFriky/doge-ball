@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ISteeringBehaviors
+public interface ISteeringBehaviors2D
 {
-    Vector3 GetDir();
+    Vector2 GetDir();
 }

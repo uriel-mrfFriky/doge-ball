@@ -14,7 +14,7 @@ public class Suction_strategi : MonoBehaviour,ISuction_Strategi
             return true;
     }
 
-    public void MoveStrategi(Transform target, Transform _myTransform, Rigidbody2D _targetRb, float _speed, float rotationSpeed)
+    public void MoveStrategi(Transform target, Transform _myTransform, Rigidbody2D _targetRb, float _speed, float rotationSpeed,ObstacleAvoidance avoidance)
     {
         Vector2 direction = (Vector2)_myTransform.position - _targetRb.position ;
         if (InRange(direction.magnitude,_range))

@@ -9,9 +9,14 @@ public class MisilControler : MonoBehaviour,IFactorizable,IComand
 {
     [SerializeField] 
     protected Misil_Stats _misil_stats;
+    [SerializeField]
+    protected float avoidRadius;
+    [SerializeField]
+    protected LayerMask Mask;
 
     protected Rigidbody2D _rb;
     protected GameObject Target;
+    protected ObstacleAvoidance _avoidance;
     protected float _currentCooldDownTime;
     protected float _currentLifeTime;
     protected float _currentSpeed;
@@ -23,18 +28,20 @@ public class MisilControler : MonoBehaviour,IFactorizable,IComand
     public float CurrentLifeTime  => _currentLifeTime;
 
     protected virtual void Awake()
-    { }
-    // Start is called before the first frame update
-    protected virtual void Start()
-    {
-        GameManager.Instance.Misil = this.gameObject;
+    { 
         _currentCooldDownTime = 0;
         _currentLifeTime = _misil_stats._lifeTime;
         _currentSpeed = Misil_stats.speed;
         _rb = GetComponent<Rigidbody2D>();
+        this.SetTarget();
+        _avoidance = new ObstacleAvoidance(transform,Target.transform,avoidRadius,_misil_stats.rotationSpeed,Mask);
+    }
+    // Start is called before the first frame update
+    protected virtual void Start()
+    {
+        GameManager.Instance.Misil = this.gameObject;
         Deflection = new UnityEvent();
         Deflection.AddListener(OnDeflection);
-        this.SetTarget();
     }
     protected virtual void Update()
     {
@@ -61,7 +68,6 @@ public class MisilControler : MonoBehaviour,IFactorizable,IComand
             else
             {
                 _rb.velocity = _rb.velocity * -1;
-                _rb.angularVelocity = 0;
                 _currentCooldDownTime = _misil_stats._cooldDownTime;
                 deflected = false;
             }
@@ -82,12 +88,22 @@ public class MisilControler : MonoBehaviour,IFactorizable,IComand
     public virtual void Execute()
     {
         // execute misil chase strategi
-        _misil_stats.chase_Strategi.MoveStrategi(Target.transform, transform, _rb, _currentSpeed,_misil_stats.rotationSpeed);
+        _misil_stats.chase_Strategi.MoveStrategi(Target.transform, transform, _rb, _currentSpeed,_misil_stats.rotationSpeed,_avoidance);
         _rb.angularVelocity = _misil_stats.chase_Strategi.NewAngle;
         _rb.velocity = _misil_stats.chase_Strategi.NewVelocity;
     }
     public virtual void Destroy()
     {        
         Destroy(this.gameObject);
+    }
+    private void OnDrawGizmos()
+    {
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(transform.position,avoidRadius);
+        foreach (var item in _avoidance.obstacles)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawLine(transform.position,item.transform.position);
+        }
     }
 }
