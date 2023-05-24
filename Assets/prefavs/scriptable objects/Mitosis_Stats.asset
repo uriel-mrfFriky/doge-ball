@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31054c377794637408d853b3fa2fffee, type: 3}
+  m_Name: Mitosis_Stats
+  m_EditorClassIdentifier: 
+  rotateAmound: 72
+  childrensAmound: 5
+  ChildrenPrefav: {fileID: 6420322849753552940, guid: 0b61dd1e74f2d974798bb61600e3a63b,
+    type: 3}
+  Mitosis_Strategi: {fileID: 885144993486598856, guid: 6cee94a1153da7542b02f8002d652d99,
+    type: 3}
+  childrensCreated: 0
+  Childrens: []
