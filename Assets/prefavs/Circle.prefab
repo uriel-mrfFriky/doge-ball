@@ -117,7 +117,7 @@ MonoBehaviour:
   avoidRadius: 3.25
   Mask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 264
   Deflection:
     m_PersistentCalls:
       m_Calls: []

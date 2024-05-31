@@ -14,8 +14,8 @@ public class Chase_strategi : MonoBehaviour, IMove_Strategi
     public void MoveStrategi(Transform target,Transform _myTransform,Rigidbody2D _Rb, float _speed,float rotationSpeed,ObstacleAvoidance avoidance)
     {
         Vector2 direction = (Vector2)target.position - _Rb.position;
-        float rotateAmound = Vector3.Cross(direction.normalized + avoidance.GetDirTilemap().normalized, _myTransform.up).z;
-        _newAngle = -rotateAmound * rotationSpeed * _speed/3;
+        Vector3 rotateAmound = Vector3.Cross(direction.normalized, avoidance.GetDir().normalized);
+        _newAngle = -rotateAmound.z * rotationSpeed * _speed/3;
         _newVelocity = _myTransform.up * _speed ;
     }
 
