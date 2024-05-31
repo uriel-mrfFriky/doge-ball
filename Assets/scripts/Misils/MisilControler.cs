@@ -100,7 +100,7 @@ public class MisilControler : MonoBehaviour,IFactorizable,IComand
     {
             Gizmos.color = Color.magenta;
             Gizmos.DrawWireSphere(transform.position,avoidRadius);
-        foreach (var item in _avoidance.obstacles)
+        foreach (var item in _avoidance.obstacles2D)
         {
             Gizmos.color = Color.blue;
             Gizmos.DrawLine(transform.position,item.transform.position);
