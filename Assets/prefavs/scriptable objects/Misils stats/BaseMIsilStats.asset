@@ -16,7 +16,7 @@ MonoBehaviour:
     type: 3}
   chase_Strategi: {fileID: 2811053348721787887, guid: 9835a152c6dfc764696dc824ab155639,
     type: 3}
-  speed: 6
-  rotationSpeed: 300
+  speed: 2
+  rotationSpeed: 201.17
   _cooldDownTime: 1
-  _lifeTime: 20
+  _lifeTime: 2000

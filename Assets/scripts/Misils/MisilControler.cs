@@ -88,7 +88,9 @@ public class MisilControler : MonoBehaviour,IFactorizable,IComand
     public virtual void Execute()
     {
         // execute misil chase strategi
-        _misil_stats.chase_Strategi.MoveStrategi(Target.transform, transform, _rb, _currentSpeed,_misil_stats.rotationSpeed,_avoidance);
+        _misil_stats.chase_Strategi.MoveStrategi//parameters below
+            (Target.transform, transform, _rb, _currentSpeed,_misil_stats.rotationSpeed,_avoidance);
+
         _rb.angularVelocity = _misil_stats.chase_Strategi.NewAngle;
         _rb.velocity = _misil_stats.chase_Strategi.NewVelocity;
     }
@@ -98,9 +100,13 @@ public class MisilControler : MonoBehaviour,IFactorizable,IComand
     }
     private void OnDrawGizmos()
     {
-            Gizmos.color = Color.magenta;
-            Gizmos.DrawWireSphere(transform.position,avoidRadius);
-        foreach (var item in _avoidance.obstacles2D)
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireSphere(transform.position,avoidRadius);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position, _avoidance.cellWorldPos);
+
+        foreach (var item in _avoidance.obstacles)
         {
             Gizmos.color = Color.blue;
             Gizmos.DrawLine(transform.position,item.transform.position);
