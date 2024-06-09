@@ -133,11 +133,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4717690142970196817, guid: 11f4b610bdada6a4d8346f1b332f0a73,
         type: 3}
-      propertyPath: _speed
-      value: 312
-      objectReference: {fileID: 0}
-    - target: {fileID: 4717690142970196817, guid: 11f4b610bdada6a4d8346f1b332f0a73,
-        type: 3}
       propertyPath: _maxLife
       value: 30
       objectReference: {fileID: 0}
@@ -272,12 +267,12 @@ PrefabInstance:
     - target: {fileID: 1002842892913782064, guid: 3e381c8847929a24abc4e326480fd9cb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.7189488
+      value: -6.289
       objectReference: {fileID: 0}
     - target: {fileID: 1002842892913782064, guid: 3e381c8847929a24abc4e326480fd9cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8988333
+      value: -3.15
       objectReference: {fileID: 0}
     - target: {fileID: 1002842892913782064, guid: 3e381c8847929a24abc4e326480fd9cb,
         type: 3}
@@ -25677,7 +25672,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -25969,7 +25964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1425716149}
-  misilType: {fileID: 6298235354890867396, guid: 3e381c8847929a24abc4e326480fd9cb,
+  misilType: {fileID: 6420322849753552947, guid: 58ba310fcb935c54bbb54a0bc0ec9f0d,
     type: 3}
   _createCoolDown: 1
   CreateMisil:
@@ -26417,6 +26412,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1440058852}
   - {fileID: 1141838135}
+  - {fileID: 343646788}
   - {fileID: 248912436}
   - {fileID: 519420032}
   - {fileID: 1451758204}
@@ -26426,4 +26422,3 @@ SceneRoots:
   - {fileID: 252198825}
   - {fileID: 1524887192}
   - {fileID: 1432655280}
-  - {fileID: 343646788}

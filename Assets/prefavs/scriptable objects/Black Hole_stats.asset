@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Black Hole_stats
   m_EditorClassIdentifier: 
   succionSpeed: 100
-  range: 3.54
+  range: 3
   suction_Strategi: {fileID: 7808217176314337836, guid: 399bd9df12e26e34bad00ebac5b19fe0,
     type: 3}

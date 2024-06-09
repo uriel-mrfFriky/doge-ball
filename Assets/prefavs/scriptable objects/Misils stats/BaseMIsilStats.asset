@@ -18,5 +18,5 @@ MonoBehaviour:
     type: 3}
   speed: 130
   rotationSpeed: 200
-  _cooldDownTime: 2
-  _lifeTime: 3
+  _cooldDownTime: 1
+  _lifeTime: 1000000
