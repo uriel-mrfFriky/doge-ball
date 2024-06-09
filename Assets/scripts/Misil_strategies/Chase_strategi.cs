@@ -18,19 +18,19 @@ public class Chase_strategi : MonoBehaviour, IMove_Strategi
         Vector2 TargetDirection = (Vector2)target.position - _Rb.position;
         
         //get the direction to the wall i shall avoid
-        Vector3 ObstacleDirection = Vector3.Cross(_myTransform.up, avoidance.GetTileDir().normalized);
+       // Vector3 ObstacleDirection = Vector3.Cross(_myTransform.up, avoidance.GetTileDir().normalized);
         
         //get the direction to chase the player
-        //Vector3 ChaseDirection = Vector3.Cross(TargetDirection.normalized, _myTransform.up);
+        Vector3 ChaseDirection = Vector3.Cross(TargetDirection.normalized, _myTransform.up);
 
         //get the rotation to avoid the walls and chase the player
         //float rotateAmound = ObstacleDirection.z + ChaseDirection.z;
 
             //Vector3.Cross(ChaseDirection,ObstacleDirection).z;
 
-        //float rotateAmound = ChaseDirection.z;
-        float rotateAmound = ObstacleDirection.z;
-        _newAngle = rotateAmound * rotationSpeed * _speed;
+        float rotateAmound = ChaseDirection.z;
+        //float rotateAmound = ObstacleDirection.z;
+        _newAngle = -rotateAmound * rotationSpeed * _speed;
         _newVelocity = _myTransform.up * _speed ;
     }
 

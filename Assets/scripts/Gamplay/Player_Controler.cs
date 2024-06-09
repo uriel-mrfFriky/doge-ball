@@ -82,6 +82,21 @@ public class Player_Controler : MonoBehaviour,ILive
     {
         if (!isInCooldown)
         {
+            if (GameManager.Instance.Misil != null)
+            {
+                if (misilInRange.InSight(GameManager.Instance.Misil.transform))
+                {
+                    fillLefth.fillAmount = 0.06f;
+                    fillRigth.fillAmount = 0.06f;
+                    isInCooldown = true;
+                    UnityEvent @event = GameManager.Instance.Misil.GetComponent<MisilControler>().Deflection;
+                    if (@event != null)
+                        GameManager.Instance.EventQueue.Add(@event);
+                    // else
+                    // Debug.Log("deflection null");
+                }
+            }
+
             if (_inputs.Action1()) 
             {
                 fillLefth.fillAmount = 0.06f;

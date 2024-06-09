@@ -34,6 +34,7 @@ public class MisilBHoleControler : MisilControler
     public override void Execute()
     {
         base.Execute();
+        Debug.Log("life time :" + CurrentLifeTime);
         blackHole_Stats.suction_Strategi.MoveStrategi(Target.transform, transform, Target.GetComponent<Rigidbody2D>(), blackHole_Stats.succionSpeed, _misil_stats.rotationSpeed,_avoidance);
     }
     private void OnDrawGizmos()
