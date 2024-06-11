@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Input : MonoBehaviour
+public class Character_Player_Input : MonoBehaviour
 {
     public float xMovement()
     {
-        float xMovement = Input.GetAxis("Horizontal");
+        float xMovement = Input.GetAxisRaw("Horizontal");
         return xMovement;
     }
     public float yMovement()
     {
-        float yMovement = Input.GetAxis("Vertical");
+        float yMovement = Input.GetAxisRaw("Vertical");
         return yMovement;
     }
     public bool Action1()

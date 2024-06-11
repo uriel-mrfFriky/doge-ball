@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 5471041035581553880}
   - component: {fileID: 5471041035581553884}
   - component: {fileID: 4717690142970196817}
+  - component: {fileID: 9124248937708733889}
+  - component: {fileID: 6381807693744317990}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -177,12 +179,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   misilInRange: {fileID: 5471041035257237495}
-  _speed: 200
   _maxLife: 0
   SpawnPoint: {fileID: 0}
   fillRigth: {fileID: 5471041034510723123}
   fillLefth: {fileID: 5471041035370644899}
   shieldDecressRate: 0.1
+--- !u!114 &9124248937708733889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5471041035581553881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5053757bd426ac45a67cdc83b634459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 3
+--- !u!114 &6381807693744317990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5471041035581553881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b88e1edc61c1094bb976ac76f74ae5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8797639932681533188
 PrefabInstance:
   m_ObjectHideFlags: 0

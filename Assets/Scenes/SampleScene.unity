@@ -133,6 +133,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4717690142970196817, guid: 11f4b610bdada6a4d8346f1b332f0a73,
         type: 3}
+      propertyPath: _speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717690142970196817, guid: 11f4b610bdada6a4d8346f1b332f0a73,
+        type: 3}
       propertyPath: _maxLife
       value: 30
       objectReference: {fileID: 0}

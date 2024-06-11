@@ -82,7 +82,7 @@ public class MisilControler : MonoBehaviour,IFactorizable,IComand
             _currentCooldDownTime -= Time.deltaTime;
             AgentRotation();
         }
-        Debug.Log(_currentCooldDownTime);
+        //Debug.Log(_currentCooldDownTime);
     }
     public virtual void Create(Transform spawnPoint)
     {

@@ -25,7 +25,7 @@ public class CanvasControler : MonoBehaviour
     void Update()
     {
         if(GameManager.Instance.PlayerInstance!= null)
-        LifesText.text = "X"+GameManager.Instance.PlayerInstance.GetComponent<Player_Controler>().Life_Controller.CurrentLife;
+        LifesText.text = "X"+GameManager.Instance.PlayerInstance.GetComponent<Character_Player_Controler>().Life_Controller.CurrentLife;
         if(GameManager.Instance.LvlManager!=null)
         survivedMisils.text = GameManager.Instance.LvlManager.GetComponent<LevelManager>().SurvivedMisils + "x";
         if(GameManager.Instance.Misil!=null)
